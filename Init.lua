@@ -16,22 +16,21 @@ Depot:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end
 Depot:RegisterEvent("ADDON_LOADED")
 
 function Depot:ADDON_LOADED()
+    --Run initialization
     self:Init()
     self:SetupCurrencies()
 
-    --Remove event
+    --Unregister ADDON_LOADED
     self:UnregisterEvent("ADDON_LOADED")
     self.ADDON_LOADED = nil
 end
 
 function Depot:Init()
-    local playerName = UnitName("player")
+    self.PlayerName = UnitName("Player")
     local realmName = GetRealmName()
 
     Depot_SV = Depot_SV or {}
     Depot_SV[realmName] = Depot_SV[realmName] or {}
 
     self.RealmDepot = Depot_SV[realmName]
-    self.RealmDepot[playerName] = self.RealmDepot[playerName] or {}
-    self.PlayerDepot = self.RealmDepot[playerName]
 end
