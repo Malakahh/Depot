@@ -12,9 +12,13 @@
 
 ## SavedVariables: Depot_SV
 
-#LibStub
+# LibStub
 libs\LibStub\LibStub.lua
 
-
+# Main
 Init.lua
 Currencies.lua
+Inventory.lua
+
+# Helpers
+Functions.lua

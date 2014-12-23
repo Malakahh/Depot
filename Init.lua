@@ -19,6 +19,7 @@ function Depot:ADDON_LOADED()
     --Run initialization
     self:Init()
     self:SetupCurrencies()
+    self:SetupInventory()
 
     --Unregister ADDON_LOADED
     self:UnregisterEvent("ADDON_LOADED")
